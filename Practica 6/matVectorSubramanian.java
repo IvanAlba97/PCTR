@@ -24,7 +24,9 @@ public class matVectorSubramanian implements Runnable {
 
     @Override
     public void run() {
-
+        for(int j=0;j<m;j++){
+            C[n] += A[n][m] * B[m];
+        }
     }
 
     public static void main(String[] args) {
@@ -78,7 +80,7 @@ public class matVectorSubramanian implements Runnable {
 
         double tiempoFinal = System.currentTimeMillis() - tiempoInicio;
 
-        //mostrar(A, B, C, n, m);
+        mostrar(A, B, C, n, m);
         System.out.println("Tiempo = " + tiempoFinal + " milisegundos.");
     }
 
