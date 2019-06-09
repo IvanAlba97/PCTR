@@ -25,7 +25,7 @@ public class matVectorSubramanian implements Runnable {
     @Override
     public void run() {
         for(int j=0;j<m;j++){
-            C[n] += A[n][m] * B[m];
+            C[n] += A[n][j] * B[j];
         }
     }
 
