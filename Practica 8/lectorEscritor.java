@@ -17,9 +17,9 @@ public class lectorEscritor {
         while (escribiendo) {
             wait();
             System.out.println("Lector " + i + " esperando.");
-            n++;
-            System.out.println("Lector " + i + " leyendo.");
         }
+        n++;
+        System.out.println("Lector " + i + " leyendo.");
     }
 
     public synchronized void finLectura(int i) {
