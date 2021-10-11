@@ -1,3 +1,4 @@
+package PCTR.practica2.src;
 /**
  *
  * @author ivan0
