@@ -2,14 +2,13 @@ package PCTR.practica1.src;
 
 public class omnivoro extends animal{
     
-    public enum tipo { TERRESTRE, ACUÁTICO, VOLADOR }
-    tipo tipoOmnivoro;
+    boolean humano;
 
-    public omnivoro(int nO, int nP, boolean pelo, tipo t) {
+    public omnivoro(int nO, int nP, boolean pelo, boolean humano) {
         super(nO, nP, pelo);
-        this.tipoOmnivoro = t;
+        this.humano = humano;
     }
 
-    public void setTipoomnivoro(tipo t)    { this.tipoOmnivoro = t;   }
-    public tipo getTipoomnivoro()          { return tipoOmnivoro;     }
+    public void setHumano(boolean b)    { this.humano = b;   }
+    public boolean getHumano()          { return humano;     }
 }
