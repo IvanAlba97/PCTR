@@ -1,7 +1,5 @@
-/**
- *
- * @author ivan0
- */
+package PCTR.practica1.src;
+
 import java.util.Scanner;
 
 public class usaComplejos {

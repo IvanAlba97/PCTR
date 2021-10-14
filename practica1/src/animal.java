@@ -1,3 +1,5 @@
+package PCTR.practica1.src;
+
 public class animal {
 
     private int nOjos, nPatas;
