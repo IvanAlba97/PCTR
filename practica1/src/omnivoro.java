@@ -2,7 +2,7 @@ package PCTR.practica1.src;
 
 public class omnivoro extends animal{
     
-    private enum tipo { TERRESTRE, ACUÁTICO, VOLADOR }
+    public enum tipo { TERRESTRE, ACUÁTICO, VOLADOR }
     tipo tipoOmnivoro;
 
     public omnivoro(int nO, int nP, boolean pelo, tipo t) {
