@@ -1,5 +1,15 @@
 package PCTR.practica1.src;
 
-public class carnivoro {
-    
+public class carnivoro extends animal {
+
+    private enum tipo { ESTRICTO, PISCIVORO, INSECTIVORO }
+    tipo tipoCarnivoro;
+
+    public carnivoro(int nO, int nP, boolean pelo, tipo t) {
+        super(nO, nP, pelo);
+        this.tipoCarnivoro = t;
+    }
+
+    public void setTipoCarnivoro(tipo t)    { this.tipoCarnivoro = t;   }
+    public tipo getTipoCarnivoro()          { return tipoCarnivoro;     }
 }
