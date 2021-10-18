@@ -39,16 +39,16 @@ public class prodEscalarParalelo extends Thread {
         inicio = 0;
         fin = rango;
         double tiempoInicio = System.nanoTime();
-        prodEscalarParalelo[] h = new prodEscalarParalelo[nHebras];
+        prodEscalarParalelo[] productoParcial = new prodEscalarParalelo[nHebras];
         for(int i = 0; i < nHebras; i++) {
-            h[i] = new prodEscalarParalelo(i, inicio, fin, v1, v2);
-            h[i].start();
+            productoParcial[i] = new prodEscalarParalelo(i, inicio, fin, v1, v2);
+            productoParcial[i].start();
             inicio = fin;
             if(fin + rango >= N) fin = N - 1;
             else fin += rango;
         }
         for(int i = 0; i < nHebras; i++) {
-            h[i].join();
+            productoParcial[i].join();
         }
         double tiempoFin = System.nanoTime() - tiempoInicio;
         System.out.println("Tiempo paralelo: " + tiempoFin/1000000 + " milisegundos.");
