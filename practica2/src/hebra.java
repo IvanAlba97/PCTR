@@ -1,8 +1,4 @@
 package PCTR.practica2.src;
-/**
- *
- * @author ivan0
- */
 
 public class hebra extends Thread {
     

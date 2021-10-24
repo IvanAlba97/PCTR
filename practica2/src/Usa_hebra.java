@@ -1,3 +1,5 @@
+package PCTR.practica2.src;
+
 import java.util.Scanner;
 
 public class Usa_hebra {
