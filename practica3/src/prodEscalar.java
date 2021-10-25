@@ -1,3 +1,5 @@
+package PCTR.practica3.src;
+
 import java.util.Random;
 
 public class prodEscalar {

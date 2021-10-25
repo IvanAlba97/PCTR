@@ -1,3 +1,5 @@
+package PCTR.practica3.src;
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -52,6 +54,7 @@ public class prodEscalarParalelo extends Thread {
         }
         double tiempoFin = System.nanoTime() - tiempoInicio;
         System.out.println("Tiempo paralelo: " + tiempoFin/1000000 + " milisegundos.");
+        S.close();
     }
     
 }
