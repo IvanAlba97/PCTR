@@ -7,7 +7,7 @@ public class matVector {
     public static void main(String[] args) {
         Random rand = new Random(System.nanoTime());
         
-        int N = 1000000;
+        int N = 100000;
         int[][] M = new int[N][N];
         int[] V1 = new int[N];
         int[] V2 = new int[N];
