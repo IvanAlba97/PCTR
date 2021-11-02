@@ -15,10 +15,10 @@ public class tryThree extends Thread{
                 for(int i = 0; i < nVueltas; i++) {
                     C1 = true;
                     while(C2 == true);
-                        n++;
-                        C1 = false;
-                    }
-                    break;
+                    n++;
+                    C1 = false;
+                }
+                break;
             case 2: 
                 for(int i = 0; i < nVueltas; i++) {
                     C2 = true;
