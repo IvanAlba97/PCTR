@@ -16,11 +16,11 @@ public class algDekker extends Thread {
         p.start();
         q.start();
         r.start();
-        try{
+        try {
             p.join();
             q.join();
             r.join();
-        }catch(InterruptedException e){
+        } catch(InterruptedException e){
             System.err.println(e.getMessage());
         }
         System.out.println("El valor del recurso compartido es " + enteroCompartido);
