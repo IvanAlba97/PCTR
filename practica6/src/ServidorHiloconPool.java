@@ -35,7 +35,7 @@ public class ServidorHiloconPool implements Runnable{
         int puerto = 2001;
         double tiempoInicio = System.nanoTime();
         ExecutorService pool = Executors.newCachedThreadPool();
-        try{
+        try {
             ServerSocket chuff = new ServerSocket(puerto, 3000);
             while(true){
                 System.out.println("Esperando solicitud de conexión...");
@@ -44,7 +44,7 @@ public class ServidorHiloconPool implements Runnable{
                 pool.execute(new ServidorHiloconPool(cable, i));
                 i++;
             }
-        }catch(IOException e){System.out.println("Error en los sockets...");}
+        } catch(IOException e) { System.out.println("Error en los sockets..."); }
         double tiempoFin = System.nanoTime() - tiempoInicio;
         System.out.println("TIEMPO = " + tiempoFin/1000000 + " milisegundos.");
     }
