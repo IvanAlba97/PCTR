@@ -46,6 +46,7 @@ public class numPerfectosParalelo implements Callable {
         lSup = ventana;
 
         Vector<Future<Integer>> vec = new Vector<Future<Integer>>();
+        long inicTiempo = System.nanoTime();
         ExecutorService pool = Executors.newFixedThreadPool(nNuc);
         for (int i = 0; i < nNuc; i++) {
             Future<Integer> fut = pool.submit(new numPerfectosParalelo(lInf, lSup));
@@ -66,8 +67,10 @@ public class numPerfectosParalelo implements Callable {
                 e.printStackTrace();
             }
         }
+        long tiempoTotal = (System.nanoTime()-inicTiempo)/(long)1.0e6;
 
-        System.out.print("Numeros perfectos = " + cont);
+        System.out.println("Numeros perfectos = " + cont);
+        System.out.println("Tiempo: " + tiempoTotal + " milisegundos.");
 
         S.close();
     }
