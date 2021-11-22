@@ -1,4 +1,5 @@
 public class usaDrakkarVikingo {
+    
     private static drakkarVikingo monitor;
 
     public static class vikingo implements Runnable {
