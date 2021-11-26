@@ -27,8 +27,8 @@ public class clienteMultiple {
                     System.out.println("Cerrando conexion...");
                     cable.close();
 
-                } catch (IOException e) {
-                    System.out.println("Error en sockets...");
+                } catch (IOException E) {
+                    System.err.println(E.getMessage());
                 }
             }
             double tiempoFin = System.nanoTime() - tiempoInicio;

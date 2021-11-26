@@ -30,14 +30,14 @@ public class ServidorHiloconPool implements Runnable{
         }catch(Exception e){System.out.println("Error");}
     }
     
-    public static void main(String[] args){
+    public static void main(String[] args) {
         int i = 0;
         int puerto = 2001;
         double tiempoInicio = System.nanoTime();
         ExecutorService pool = Executors.newCachedThreadPool();
         try {
             ServerSocket chuff = new ServerSocket(puerto, 3000);
-            while(true){
+            while(true) {
                 System.out.println("Esperando solicitud de conexión...");
                 Socket cable = chuff.accept();
                 System.out.println("Recibida solicitud de conexión...");

@@ -1,5 +1,34 @@
-public class arrSeguro {
-    
+public class arrSeguro extends Thread {
+
+    private static final Object cerrojo = new Object();
+    public int id;
+    public static int[] v;
+
+    public arrSeguro(int i, int[] v) {
+        this.id = i;
+        arrSeguro.v = v;
+    }
+
+    public void run() {
+        synchronized(cerrojo) {
+            v[id] = id;
+        }
+    }
+
+    public static void main(String[] args) throws Exception {
+        int nHebras = 10;
+        int[] v = new int[nHebras];
+        Thread[] hilos = new Thread[nHebras];
+
+        for (int i = 0; i < hilos.length; i++) {
+            hilos[i] = new Thread(new arrSeguro(i, v));
+            hilos[i].start();
+        }
+
+        for (int i = 0; i < hilos.length; i++) {
+            hilos[i].join();
+        }
+    }
 }
 
 
