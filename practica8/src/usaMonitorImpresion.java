@@ -23,8 +23,8 @@ public class usaMonitorImpresion implements Runnable {
                 sleep(1000);
                 M.dropPrint(id, imp);
                 sleep(2000);
-            } catch (InterruptedException e) {
-                System.err.println(e.getMessage());
+            } catch (InterruptedException E) {
+                E.printStackTrace();
             }
         }
     }
