@@ -6,7 +6,6 @@ import java.util.concurrent.Executors;
 public class usaMonitorImpresion implements Runnable {
 
     private static monitorImpresion M;
-    //private static final int nImpresoras = 3;
     private final int id;
 
     public usaMonitorImpresion(int id) {
@@ -16,7 +15,6 @@ public class usaMonitorImpresion implements Runnable {
 
     @Override
     public void run() {
-
         while (true) {
             try {
                 int imp = M.takePrint(id);
@@ -33,9 +31,9 @@ public class usaMonitorImpresion implements Runnable {
         Scanner S = new Scanner(System.in);
         System.out.print("Introduce el numero de procesos: ");
         int nProc = S.nextInt();
-        int nHilos = (int)(Runtime.getRuntime().availableProcessors()/1-0.5);
+        int nHilos = (int)(Runtime.getRuntime().availableProcessors() / 1 - 0.5);
         ExecutorService pool = Executors.newFixedThreadPool(nHilos);
-        for(int i=0;i<nProc;i++){
+        for(int i = 0; i < nProc; i++) {
             Runnable runnable = new usaMonitorImpresion(i);
             pool.execute(runnable);
         }

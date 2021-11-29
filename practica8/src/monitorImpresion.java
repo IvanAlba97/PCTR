@@ -5,9 +5,7 @@ public class monitorImpresion {
 
     public monitorImpresion() {
         libres = new boolean[impLibres];
-        for (int i = 0; i < impLibres; i++) {
-            libres[i] = true;
-        }
+        for (int i = 0; i < impLibres; i++) libres[i] = true;
     }
 
     public synchronized int takePrint(int id) {
