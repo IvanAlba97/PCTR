@@ -18,9 +18,9 @@ public class usaMonitorImpresion implements Runnable {
         while (true) {
             try {
                 int imp = M.takePrint(id);
-                sleep(1000);
-                M.dropPrint(id, imp);
                 sleep(2000);
+                M.dropPrint(id, imp);
+                sleep(1000);
             } catch (InterruptedException E) {
                 E.printStackTrace();
             }

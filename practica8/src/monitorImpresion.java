@@ -35,5 +35,6 @@ public class monitorImpresion {
         libres[imp] = true;
         System.out.println("Hilo " + id + " libera la impresora " + imp);
         impLibres++;
+        notifyAll();
     }
 }
