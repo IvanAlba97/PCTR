@@ -16,6 +16,7 @@ public class prodInterno {
         if(rank == emisor) {    // Código del emisor
             int buffer1[] = new int[4];
             int buffer2[] = new int[4];
+            int revBuffer[] = new int[1];
             for(int i = 0; i < buffer1.length; i++) {
                 buffer1[i] = i;
                 buffer2[i] = i * 2;
@@ -23,6 +24,7 @@ public class prodInterno {
             MPI.COMM_WORLD.Send(buffer1, 0, buffer1.length, MPI.INT, receptor, tag);
             MPI.COMM_WORLD.Send(buffer2, 0, buffer2.length, MPI.INT, receptor, tag);
             MPI.COMM_WORLD.Recv(revbuffer, 0, 1, MPI.INT, receptor, tag);
+            System.out.println("Producto = " + revBuffer[1]);
         } else {    // Códugo del receptor
             int revBuffer1 = new int[4];
             int revBuffer2 = new int[4];
