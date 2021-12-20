@@ -18,5 +18,7 @@ public class cBonoLoto {
             if (resultado) System.out.println("GANASTE");
             else System.out.println("PERDISTE");
         }
+
+        S.close();
     }
 }
