@@ -12,7 +12,7 @@ public class cBonoLoto {
         for (int i = 0; i < nClientes; i++) {
             iBonoLoto RefORemoto = (iBonoLoto) Naming.lookup("//localhost/Servidor");
             int[] apuesta = new int[6];
-            for (int j = 0; j < apuesta.length; j++) apuesta[j] = rand.nextInt(2);
+            for (int j = 0; j < apuesta.length; j++) apuesta[j] = rand.nextInt(49) + 1;
             boolean resultado = RefORemoto.compApuesta(apuesta);
             for (int j = 0; j < apuesta.length; j++) System.out.print(apuesta[j] + " ");
             if (resultado) System.out.println("GANASTE");

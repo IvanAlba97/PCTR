@@ -15,7 +15,7 @@ public class sBonoLoto extends UnicastRemoteObject implements iBonoLoto {
     public void resetServidor() throws RemoteException {
         Random rand = new Random(System.nanoTime());
         for (int i = 0; i < bonoLoto.length; i++) {
-            bonoLoto[i] = rand.nextInt(2);
+            bonoLoto[i] = rand.nextInt(49) + 1;
         }
     }
 
