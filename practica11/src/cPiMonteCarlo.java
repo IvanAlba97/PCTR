@@ -29,6 +29,7 @@ public class cPiMonteCarlo {
                     break;
                 case 2:
                     RefORemoto.reset();
+                    System.out.print("Calculo de PI reseteado: ");
                     break;
                 case 3:
                     System.out.println("Valor de PI en este momento: " + RefORemoto.aproxActual());
