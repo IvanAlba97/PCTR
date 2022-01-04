@@ -25,7 +25,7 @@ public class prodInterno {
             MPI.COMM_WORLD.Send(buffer2, 0, buffer2.length, MPI.INT, receptor, tag);
             MPI.COMM_WORLD.Recv(revbuffer, 0, 1, MPI.INT, receptor, tag);
             System.out.println("Producto = " + revBuffer[0]);
-        } else {    // Códugo del receptor
+        } else {    // Código del receptor
             int revBuffer1 = new int[4];
             int revBuffer2 = new int[4];
             MPI.COMM_WORLD.Recv(revbuffer1, 0, revbuffer1.length, MPI.INT, emisor, tag);
