@@ -1,6 +1,6 @@
 ## Content
 
-In this repository, the exercises of practise 2 of PCTR are solved.
+In this repository, the exercises of practise 1 of PCTR are solved.
 
 ## Getting Started
 
