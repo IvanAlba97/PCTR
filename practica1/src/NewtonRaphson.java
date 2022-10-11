@@ -1,4 +1,4 @@
-package PCTR.practica1.src;
+//package PCTR.practica1.src;
 
 import java.util.Scanner;
 
