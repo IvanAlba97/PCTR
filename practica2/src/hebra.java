@@ -1,15 +1,27 @@
-package PCTR.practica2.src;
-
+/**
+ * Esta clase contiene los atributos y metodos de una hebra
+ * @author Iván Alba Gómez
+ * @version 3.0
+ * @see hebra
+ */
 public class hebra extends Thread {
     
     private static int n = 0;
     private int tipoHilo, nIter;
     
+    /**
+     * Método constructor parametrizado
+     * @param tipoHilo Indica si el hilo incrementa o decrementa
+     * @param nIter Número de iteraciones
+     */
     public hebra(int tipoHilo, int nIter) {
         this.tipoHilo = tipoHilo;
         this.nIter = nIter;
     }
     
+    /**
+     * Método run
+     */
     @Override
     public void run() {
         switch(tipoHilo) {
@@ -19,6 +31,10 @@ public class hebra extends Thread {
         }
     }
     
+    /**
+     * Metodo para obtener el valor de n
+     * @return Regresa el valor de n
+     */
     public int getN() { return n; }
     
 }
