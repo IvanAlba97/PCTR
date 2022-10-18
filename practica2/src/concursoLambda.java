@@ -1,6 +1,6 @@
 package PCTR.practica2.src;
 
-public class expresionLambda {
+public class concursoLambda {
     
     private static int n = 0;
 
