@@ -1,8 +1,10 @@
+package practica2.src;
+
 /**
  * Esta clase contiene los atributos y metodos de una hebra
  * @author Iván Alba Gómez
  * @version 3.0
- * @see hebra
+ * @see Usa_hebra
  */
 public class hebra extends Thread {
     

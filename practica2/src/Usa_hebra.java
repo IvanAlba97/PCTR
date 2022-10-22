@@ -1,10 +1,12 @@
+package practica2.src;
+
 import java.util.Scanner;
 
 /**
- * Esta clase contiene los atributos y metodos de un empleado
+ * Esta clase contiene el método principal para crear y ejecutar hebras
  * @author Iván Alba Gómez
  * @version 3.0
- * @see Usa_hebra
+ * @see hebra
  */
 public class Usa_hebra {
 
