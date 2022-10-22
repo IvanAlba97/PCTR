@@ -1,8 +1,13 @@
-package PCTR.practica2.src;
+package practica2.src;
 
 import java.util.Scanner;
 import java.util.Random;
 
+/**
+ * Esta clase contiene los atributos y metodos para escalar un vector de forma concurrente
+ * @author Iván Alba Gómez
+ * @version 3.0
+ */
 public class escalaVPar implements Runnable {
     
     Random rand = new Random(System.nanoTime());
@@ -38,6 +43,11 @@ public class escalaVPar implements Runnable {
         }
     }
     
+    
+    /** 
+     * Método principal
+     * @param args
+     */
     public static void main(String[] args) {
         Scanner S = new Scanner(System.in);
 
