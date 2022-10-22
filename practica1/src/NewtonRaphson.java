@@ -1,9 +1,17 @@
-//package PCTR.practica1.src;
+package practica1.src;
 
 import java.util.Scanner;
 
+/**
+ * Esta clase contiene los atributos y metodos para la resolución del método NewtonRaphson
+ * @author Iván Alba Gómez
+ * @version 3.0
+ */
 public class NewtonRaphson {
 
+    /** Método principal
+     * @param args
+     */
     public static void main(String[] args) {
         Scanner S = new Scanner(System.in);
         int op, nIter;
