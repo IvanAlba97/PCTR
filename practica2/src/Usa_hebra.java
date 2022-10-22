@@ -12,6 +12,7 @@ public class Usa_hebra {
 
     /**
      * Método principal
+     * @param args
      */
     public static void main(String[] args) {
         
