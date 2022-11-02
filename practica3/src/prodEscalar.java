@@ -1,11 +1,21 @@
-package PCTR.practica3.src;
+package practica3.src;
 
 import java.util.Random;
 
+/**
+ * Esta clase contiene los atributos y metodos para el producto escalar.
+ * @author Iván Alba Gómez
+ * @version 3.0
+ * @see prodEscalarParalelo.java
+ */
 public class prodEscalar {
     
     private static int N = 1000000;
     
+    /** 
+     * Método principal
+     * @param args
+     */
     public static void main(String[] args) {
         
         Random rand = new Random(System.nanoTime());
@@ -26,6 +36,7 @@ public class prodEscalar {
         }
         double tiempoFin = System.nanoTime() - tiempoInicio;
         
+        System.out.println("Producto escalar: " + prod);
         System.out.println("Tiempo secuencial: " + tiempoFin/1000000 + " milisegundos.");
     }
 }

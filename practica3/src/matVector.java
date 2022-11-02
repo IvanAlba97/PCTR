@@ -1,9 +1,18 @@
-package PCTR.practica3.src;
+package practica3.src;
 
 import java.util.Random;
 
+/**
+ * Esta clase contiene los atributos y metodos para el producto matriz vector.
+ * @author Iván Alba Gómez
+ * @version 3.0
+ * @see matVectorConcurrente.java
+ */
 public class matVector {    
-   
+    /** 
+     * Método principal
+     * @param args
+     */
     public static void main(String[] args) {
         Random rand = new Random(System.nanoTime());
         
