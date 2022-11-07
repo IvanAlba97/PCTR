@@ -1,5 +1,11 @@
-package PCTR.practica4.src;
+package practica4.src;
 
+/**
+ * Esta clase contiene los atributos y metodos para el cuarto intento del algoritmo de Dekker.
+ * @author Iván Alba Gómez
+ * @version 3.0
+ * @see tryThree.java
+ */
 public class tryFour extends Thread{
 	private int tipoHilo;
 	private static volatile int nVueltas = 10000;
@@ -7,8 +13,16 @@ public class tryFour extends Thread{
 	private static volatile boolean C1 = false;
 	private static volatile boolean C2 = false;
 
+    /**
+     * Método constructor.
+     * @param tipoHilo
+     */
     public tryFour(int tipoHilo) { this.tipoHilo = tipoHilo; }
 
+    /**
+     * Método que encapsula el código a ejecutar concurrentemente.
+     */
+    @Override
     public void run() {
         switch(tipoHilo){
             case 1: 
@@ -32,11 +46,17 @@ public class tryFour extends Thread{
             }
     }
 
+    
+    /** 
+     * Método principal.
+     * @param args
+     * @throws InterruptedException
+     */
     public static void main(String[] args) throws InterruptedException{
-      tryFour h1 = new tryFour(1);
-      tryFour h2 = new tryFour(2);
-      h1.start(); h2.start();
-      h1.join(); h2.join();
-      System.out.println(n);
+        tryFour h1 = new tryFour(1);
+        tryFour h2 = new tryFour(2);
+        h1.start(); h2.start();
+        h1.join(); h2.join();
+        System.out.println(n);
     }
 }
