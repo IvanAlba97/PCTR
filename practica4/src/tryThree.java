@@ -1,5 +1,11 @@
-package PCTR.practica4.src;
+package practica4.src;
 
+/**
+ * Esta clase contiene los atributos y metodos para el tercer intento del algoritmo de Dekker.
+ * @author Iván Alba Gómez
+ * @version 3.0
+ * @see tryFour.java
+ */
 public class tryThree extends Thread{
 	private int tipoHilo;
 	private static volatile int nVueltas = 10000;
@@ -9,8 +15,12 @@ public class tryThree extends Thread{
 
     public tryThree(int tipoHilo) { this.tipoHilo = tipoHilo; }
 
-    public void run(){
-        switch(tipoHilo){
+    /**
+     * Método que encapsula el código a ejecutar concurrentemente.
+     */
+    @Override
+    public void run() {
+        switch(tipoHilo) {
             case 1: 
                 for(int i = 0; i < nVueltas; i++) {
                     C1 = true;
@@ -27,14 +37,20 @@ public class tryThree extends Thread{
                     C2 = false;
                 }
                 break;
-            }
+        }
     }
 
+    
+    /** 
+     * Método principal.
+     * @param args
+     * @throws InterruptedException
+     */
     public static void main(String[] args) throws InterruptedException{
-      tryThree h1 = new tryThree(1);
-      tryThree h2 = new tryThree(2);
-      h1.start(); h2.start();
-      h1.join(); h2.join();
-      System.out.println(n);
+        tryThree h1 = new tryThree(1);
+        tryThree h2 = new tryThree(2);
+        h1.start(); h2.start();
+        h1.join(); h2.join();
+        System.out.println(n);
     }
 }
