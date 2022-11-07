@@ -1,5 +1,10 @@
-package PCTR.practica4.src;
+package practica4.src;
 
+/**
+ * Esta clase contiene los atributos y metodos del algoritmo de Dekker.
+ * @author Iván Alba Gómez
+ * @version 3.0
+ */
 public class algDekker extends Thread {
 
     static final int iteraciones = 1000000;
@@ -9,6 +14,9 @@ public class algDekker extends Thread {
     static volatile boolean wantR = false;
     static volatile int turn = 1;
 
+    /**
+     * Método constructor vacío.
+     */
     public algDekker() {
         Thread p = new P();
         Thread q = new Q();
@@ -27,8 +35,14 @@ public class algDekker extends Thread {
         System.out.println("Deberia se 0");
     }
 
+    /**
+     * Esta clase representa un proceso dentro del algoritmo de Dekker.
+     */
     class P extends Thread {    //Turno 1
 
+        /**
+         * Método que encapsula el código a ejecutar concurrentemente.
+         */
         @Override
         public void run() {
             for (int i = 0; i < iteraciones; i++) {
@@ -49,8 +63,14 @@ public class algDekker extends Thread {
         }
     }
 
+    /**
+     * Esta clase representa un proceso dentro del algoritmo de Dekker.
+     */
     class Q extends Thread {    //Turno 2
 
+        /**
+         * Método que encapsula el código a ejecutar concurrentemente.
+         */
         @Override
         public void run() {
             for (int i = 0; i < iteraciones; i++) {
@@ -71,8 +91,14 @@ public class algDekker extends Thread {
         }
     }
 
+    /**
+     * Esta clase representa un proceso dentro del algoritmo de Dekker.
+     */
     class R extends Thread {    //Turno 3
 
+        /**
+         * Método que encapsula el código a ejecutar concurrentemente.
+         */
         @Override
         public void run() {
             for (int i = 0; i < iteraciones; i++) {
@@ -93,6 +119,12 @@ public class algDekker extends Thread {
         }
     }
 
+    
+    /** 
+     * Método principal.
+     * @param args
+     * @throws InterruptedException
+     */
     public static void main(String[] args) throws InterruptedException {
         new algDekker();
     }
