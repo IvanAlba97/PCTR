@@ -1,9 +1,20 @@
-package src;
+package practica5.src;
 
 import java.util.Scanner;
 
+/**
+ * Esta clase contiene los atributos y metodos para el cálculo de números perfectos de manera secuencial.
+ * @author Iván Alba Gómez
+ * @version 3.0
+ * @see numPerfectosParalelo.java
+ */
 public class numPerfectos {
 
+    
+    /** 
+     * @param n
+     * @return boolean
+     */
     public static boolean esPerfecto(long n) {
         int suma = 0;
         for(long j = 1; j < n; j++) {
@@ -13,6 +24,12 @@ public class numPerfectos {
         else return false;
     }
 
+    
+    /** 
+     * Método principal.
+     * @param args
+     * @throws Exception
+     */
     public static void main(String[] args) throws Exception {
         Scanner S = new Scanner(System.in);
         System.out.print("Introduce la longitud del intervalo: 1 - ");

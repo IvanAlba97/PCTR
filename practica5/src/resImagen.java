@@ -1,11 +1,21 @@
-package src;
+package practica5.src;
 
 import java.util.Random;
 
+/**
+ * Esta clase contiene los atributos y metodos para el resaltado de imagenes de manera secuencial.
+ * @author Iván Alba Gómez
+ * @version 3.0
+ * @see resImagenPar.java
+ */
 public class resImagen {
 
     private static final int N = 256;
 
+    /** 
+     * Método principal.
+     * @param args
+     */
     public static void main(String[] args) {
 
         int[][] M = new int[N + 2][N + 2];
@@ -16,6 +26,11 @@ public class resImagen {
         //mostrar(M, M2);
     }
 
+    
+    /** 
+     * Este método rellena una matriz dada, dejando los bordes a 0.
+     * @param M Matriz.
+     */
     public static void rellenar(int[][] M) {
 
         Random rand = new Random(System.nanoTime());
@@ -33,6 +48,12 @@ public class resImagen {
         }
     }
 
+    
+    /** 
+     * Este método realiza el resaltado de la matriz de manera secuencial.
+     * @param M Matriz inicial.
+     * @param M2 Matriz resaltada.
+     */
     public static void resaltar(int[][] M, int[][] M2) {
 
         double tiempoInicio = System.nanoTime();
@@ -46,6 +67,12 @@ public class resImagen {
 
     }
 
+    
+    /** 
+     * Este método imprime por pantalla la matriz antes y depués del resaltado.
+     * @param M
+     * @param M2
+     */
     public static void mostrar(int[][] M, int[][] M2) {
 
         System.out.println("    .:MATRIZ NORMAL:.");

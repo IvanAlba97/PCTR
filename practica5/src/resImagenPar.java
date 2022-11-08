@@ -4,18 +4,33 @@ import java.util.Scanner;
 import java.util.Random;
 import java.util.concurrent.*;
 
+/**
+ * Esta clase contiene los atributos y metodos para el resaltado de imagenes de manera concurrente.
+ * @author Iván Alba Gómez
+ * @version 3.0
+ * @see resImagen.java
+ */
 public class resImagenPar implements Runnable {
 
     public int h;
     public int[][] M, M2;
     private static final int N = 256;
 
+    /**
+     * Método constructor.
+     * @param M
+     * @param M2
+     * @param i
+     */
     public resImagenPar(int[][] M, int[][] M2, int i) {
         this.M = M;
         this.M2 = M2;
         this.h = i;
     }
 
+    /**
+     * Método que encapsula el código a ejecutar concurrentemente.
+     */
     @Override
     public void run() {
         for (int j = 1; j < N - 1; j++) {
@@ -23,6 +38,11 @@ public class resImagenPar implements Runnable {
         }
     }
 
+    
+    /** 
+     * Método principal.
+     * @param args
+     */
     public static void main(String[] args) {
 
         Scanner S = new Scanner(System.in);
@@ -42,6 +62,11 @@ public class resImagenPar implements Runnable {
         S.close();
     }
 
+    
+    /** 
+     * Este método rellena una matriz dada, dejando los bordes a 0.
+     * @param M Matriz.
+     */
     public static void rellenar(int[][] M) {
 
         Random rand = new Random(System.nanoTime());
@@ -59,6 +84,13 @@ public class resImagenPar implements Runnable {
         }
     }
 
+    
+    /** 
+     * Este método realiza el resaltado de la matriz de manera concurrente.
+     * @param M Matriz inicial.
+     * @param M2 Matriz resaltada.
+     * @param nHilos Número de hilos.
+     */
     public static void resaltar(int[][] M, int[][] M2, int nHilos) {
 
         double tiempoInicio = System.nanoTime();
@@ -78,6 +110,12 @@ public class resImagenPar implements Runnable {
         System.out.println("Tiempo = " + tiempoFin/1000000 + " milisegundos.");
     }
 
+    
+    /** 
+     * Este método imprime por pantalla la matriz antes y depués del resaltado.
+     * @param M
+     * @param M2
+     */
     public static void mostrar(int[][] M, int[][] M2) {
 
         System.out.println("    .:MATRIZ NORMAL:.");

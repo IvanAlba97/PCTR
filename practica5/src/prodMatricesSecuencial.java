@@ -1,11 +1,21 @@
-package src;
+package practica5.src;
 
 import java.util.Random;
 
+/**
+ * Esta clase contiene los atributos y metodos para el producto de matrices de manera secuencial.
+ * @author Iván Alba Gómez
+ * @version 3.0
+ * @see prodMatricesParalelo.java
+ */
 public class prodMatricesSecuencial {
 
     private static final int N = 1000;
-
+    
+    /** 
+     * Método principal.
+     * @param args
+     */
     public static void main(String[] args) {
         Random rand = new Random(System.nanoTime());
 

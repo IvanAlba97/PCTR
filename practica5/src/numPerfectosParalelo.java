@@ -1,4 +1,4 @@
-package src;
+package practica5.src;
 
 import java.util.Scanner;
 import java.util.Vector;
@@ -8,6 +8,12 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
+/**
+ * Esta clase contiene los atributos y metodos para el cálculo de números perfectos de manera concurrente.
+ * @author Iván Alba Gómez
+ * @version 3.0
+ * @see numPerfectos.java
+ */
 public class numPerfectosParalelo implements Callable {
 
     private int lInf, lSup;
@@ -17,22 +23,26 @@ public class numPerfectosParalelo implements Callable {
         this.lSup = sup;
     }
 
+    
+    /**
+     * Método que encapsula el código a ejecutar concurrentemente.
+     * @return numPerfectos
+     */
     public Integer call() {
         int numPerfectos = 0;
-        for (int i = lInf; i <= lSup; i++) {
+        for(int i = lInf; i <= lSup; i++) {
             int suma = 0;
-            for (int j = 1; j < i; j++) {
-                if (i % j == 0) {
-                    suma += j;
-                }
-            }
-            if (i == suma) {
-                numPerfectos += 1;
-            }
+            for(int j = 1; j < i; j++) if(i % j == 0) suma += j;
+            if(i == suma) numPerfectos += 1;
         }
         return numPerfectos;
     }
 
+    
+    /** 
+     * Método principal.
+     * @param args
+     */
     public static void main(String[] args) {
         int lInf, lSup, ventana, intervalo;
         Scanner S = new Scanner(System.in);
