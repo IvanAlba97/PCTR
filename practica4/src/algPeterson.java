@@ -35,7 +35,7 @@ public class algPeterson implements Runnable {
         for(int i = 0; i < iteraciones; i++) {
             wantp = true;
             last = 1;
-            if(wantq = false || last == 2) Thread.yield();
+            if(wantq == false || last == 2) Thread.yield();
             wantp = false;
             enteroCompartido++;
             System.out.println(enteroCompartido);
@@ -49,7 +49,7 @@ public class algPeterson implements Runnable {
         for(int i = 0; i < iteraciones; i++) {
             wantq = true;
             last = 2;
-            if(wantp = false || last == 1) Thread.yield();
+            if(wantp == false || last == 1) Thread.yield();
             wantq = false;
             enteroCompartido--;
             System.out.println(enteroCompartido);
