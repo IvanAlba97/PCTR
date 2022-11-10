@@ -28,7 +28,7 @@ public class algDekker extends Thread {
             e.printStackTrace();
         }
         System.out.println("El valor del recurso compartido es " + enteroCompartido);
-        System.out.println("Deberia se 0");
+        System.out.println("Deberia ser 0");
     }
 
     /**
