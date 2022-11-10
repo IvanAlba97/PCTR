@@ -3,8 +3,6 @@ package practica4.src;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import javax.swing.plaf.synth.SynthSeparatorUI;
-
 /**
  * Esta clase contiene los atributos y metodos del algoritmo de Peterson.
  * @author Iván Alba Gómez
@@ -16,14 +14,23 @@ public class algPeterson implements Runnable {
     static volatile int enteroCompartido = 0;
     static final int iteraciones = 10000;
 
+    /**
+     * Método constructor.
+     */
     public algPeterson() {}
 
+    /**
+     * Método que encapsula el código a ejecutar concurrentemente.
+     */
     @Override
     public void run() {
         if(Thread.currentThread().getName().equals("pool-1-thread-1")) P();
         if(Thread.currentThread().getName().equals("pool-1-thread-2")) Q();
     }
 
+    /**
+     * Este método representa un proceso dentro del algoritmo de Peterson.
+     */
     public void P() {
         for(int i = 0; i < iteraciones; i++) {
             wantp = true;
@@ -35,6 +42,9 @@ public class algPeterson implements Runnable {
         }
     }
 
+    /**
+     * Este método representa un proceso dentro del algoritmo de Peterson.
+     */
     public void Q() {
         for(int i = 0; i < iteraciones; i++) {
             wantq = true;
@@ -46,6 +56,11 @@ public class algPeterson implements Runnable {
         }
     }
 
+    
+    /** 
+     * Método principal.
+     * @param args
+     */
     public static void main(String[] args) {
         ExecutorService pool = Executors.newFixedThreadPool(2);
         for(int i = 0; i < 2; i++) pool.execute(new algPeterson());

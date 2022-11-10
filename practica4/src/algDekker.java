@@ -14,7 +14,7 @@ public class algDekker extends Thread {
     static volatile int turn = 1;
 
     /**
-     * Método constructor vacío.
+     * Método constructor.
      */
     public algDekker() {
         Thread p = new P();
