@@ -3,6 +3,11 @@
  * https://stackoverflow.com/questions/14299535/java-simulating-a-deadlock-beween-3-threads-and-setting-priorities
  */
 
+/**
+ * Esta clase contiene los atributos y metodos para producir deadlocks.
+ * @author Iván Alba Gómez
+ * @version 3.0
+ */
 public class deadlock {
 
     final Object resource1 = "resource1";
@@ -10,6 +15,9 @@ public class deadlock {
     final Object resource3 = "resource3";
 
     Thread t1 = new Thread() {
+        /**
+         * Método que encapsula el código a ejecutar concurrentemente.
+         */
         public void run() {
             synchronized(resource1) {
                 System.out.println("Thread 1: locked resource 1");
@@ -22,6 +30,9 @@ public class deadlock {
     };
 
     Thread t2 = new Thread() {
+        /**
+         * Método que encapsula el código a ejecutar concurrentemente.
+         */
         public void run() {
             synchronized(resource2) {
                 System.out.println("Thread 2: locked resource 2");
@@ -35,6 +46,9 @@ public class deadlock {
     };
 
     Thread t3 = new Thread() {
+        /**
+         * Método que encapsula el código a ejecutar concurrentemente.
+         */
         public void run() {
             for(int i=1; i<=5;i++) {
                 System.out.println("t3 "+i);

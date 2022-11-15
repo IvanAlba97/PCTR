@@ -5,8 +5,19 @@ import java.util.concurrent.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * Esta clase contiene los atributos y metodos para el cálculo de una integral usando la interfaz Future.
+ * @author Iván Alba Gómez
+ * @version 3.0
+ */
 public class integCallable implements Callable<Integer> {
 
+    
+    /** 
+     * Método que encapsula el código a ejecutar concurrentemente.
+     * @return Integer
+     * @throws Exception
+     */
     @Override
     public Integer call() throws Exception {
         int hits = 0;
@@ -20,6 +31,11 @@ public class integCallable implements Callable<Integer> {
         return hits;
     }
 
+    
+    /** 
+     * Método principal.
+     * @param args
+     */
     public static void main(String[] args) {
         int nPuntos, hits = 0;
         double res;
@@ -53,5 +69,6 @@ public class integCallable implements Callable<Integer> {
         res = (double) hits / nPuntos;
         System.out.println("Integral = " + res);
 
+        S.close();
     }
 }

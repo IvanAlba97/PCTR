@@ -6,15 +6,29 @@ import java.net.Socket;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+/**
+ * Esta clase contiene los atributos y metodos para el manejo de clientes.
+ * @author Iván Alba Gómez
+ * @version 3.0
+ * @see clienteMultiple.java
+ */
 public class ServidorHiloconPool implements Runnable{
     Socket enchufe;
     int id;
     
+    /**
+     * Método constructor.
+     * @param s
+     * @param i
+     */
     public ServidorHiloconPool(Socket s, int i){
         enchufe = s;
         id = i;
     }
     
+    /**
+     * Método que encapsula el código a ejecutar concurrentemente.
+     */
     @Override
     public void run(){
         try{
@@ -22,7 +36,7 @@ public class ServidorHiloconPool implements Runnable{
             String datos = entrada.readLine();
             int j;
             int i = Integer.parseInt(datos);
-            for(j=1; j<=20; j++){
+            for(j = 1; j <= 20; j++){
                 System.out.println("El hilo "+ id +" esta escribiendo el dato "+i);
             }
             enchufe.close();
@@ -30,6 +44,11 @@ public class ServidorHiloconPool implements Runnable{
         }catch(Exception e){System.out.println("Error");}
     }
     
+    
+    /** 
+     * Método principal.
+     * @param args
+     */
     public static void main(String[] args) {
         int i = 0;
         int puerto = 2001;

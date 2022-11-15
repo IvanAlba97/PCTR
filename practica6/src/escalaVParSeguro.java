@@ -1,6 +1,11 @@
 import java.util.Scanner;
 import java.util.Random;
 
+/**
+ * Esta clase contiene los atributos y metodos para el escalado de un vector de forma concurrente.
+ * @author Iván Alba Gómez
+ * @version 3.0
+ */
 public class escalaVParSeguro implements Runnable {
     
     Random rand = new Random(System.nanoTime());
@@ -8,12 +13,21 @@ public class escalaVParSeguro implements Runnable {
     private int escalar, tipoHilo;
     private static Object cerrojo = new Object();
     
+    /**
+     * Método constructor.
+     * @param tipoHilo
+     * @param tam
+     * @param escalar
+     */
     public escalaVParSeguro(int tipoHilo, int tam, int escalar) {
         this.tipoHilo = tipoHilo;
         this.escalar = escalar;
         V = new int[tam];
     }
     
+    /**
+     * Método que encapsula el código a ejecutar concurrentemente.
+     */
     @Override
     public void run() {
         switch(tipoHilo) {
@@ -41,6 +55,11 @@ public class escalaVParSeguro implements Runnable {
         }
     }
     
+    
+    /** 
+     * Método principal.
+     * @param args
+     */
     public static void main(String[] args) {
         Scanner S = new Scanner(System.in);
 
