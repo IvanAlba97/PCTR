@@ -1,60 +1,31 @@
 /**
- * Esta clase contiene los atributos y metodos para el manejo de array seguro.
+ * Esta clase contiene los atributos y metodos para el incremento de las variables n(sincronizada) y m(no sincronizada).
  * @author Iván Alba Gómez
  * @version 3.0
+ * @see usaHeterogenea.java
  */
-public class heterogenea extends Thread {
+public class heterogenea {
 
     public static int n = 0, m = 0;
-    public int tipo;
-
+   
     /**
-     * Método constructor.
-     * @param tipo
-     */
-    public heterogenea(int tipo) {
-        this.tipo = tipo;
-    }
-
-    /**
-     * Método que encapsula el código a ejecutar concurrentemente.
-     */
-    public void run() {
-        switch(tipo) {
-            case 0: incN();
-            case 1: incM();
-        }
-    }
-
-    /**
-     * Método modificador.
+     * Método modificador sincronizado.
      */
     public synchronized void incN() { n++; }
 
     /**
-     * Método modificador.
+     * Método modificador no sincronizado.
      */
     public void incM() { m++; }
 
     /**
-     * Método principal.
-     * @param args
-     * @throws Exception
+     * Método observador.
      */
-    public static void main(String[] args) throws Exception {
-        int nHebras = 1000;
-        Thread[] hilos = new Thread[nHebras];
+    public int getN() { return n; }
 
-        for (int i = 0; i < hilos.length; i++) {
-            hilos[i] = new Thread(new heterogenea(i % 2));      // Par: tipo 0     Impar: tipo 1
-            hilos[i].start();
-        }
-
-        for (int i = 0; i < hilos.length; i++) {
-            hilos[i].join();
-        }
-
-        System.out.println("n = " + n);
-        System.out.println("m = " + m);
-    }
+    /**
+     * Método observador.
+     */
+    public int getM() { return m; }
+   
 }
