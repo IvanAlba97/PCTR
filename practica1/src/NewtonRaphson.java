@@ -1,5 +1,3 @@
-package practica1.src;
-
 import java.util.Scanner;
 
 /**

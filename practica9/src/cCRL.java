@@ -1,11 +1,11 @@
 import java.util.concurrent.locks.ReentrantLock;
 
-public class ccRL {
+public class cCRL {
 
     private ReentrantLock cerrojo = new ReentrantLock();
     private double saldo;
 
-    public ccRL() { this.saldo = 0.0; }
+    public cCRL() { this.saldo = 0.0; }
 
     public double getSaldo() { return saldo; }
 

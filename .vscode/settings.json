@@ -1,5 +1,16 @@
 {
     "java.project.sourcePaths": [
-        "."
+        "practica1/src",
+        "practica2\\src",
+        "practica3\\src",
+        "practica4\\src",
+        "practica5\\src",
+        "practica6\\src",
+        "practica7\\src",
+        "practica8\\src",
+        "practica9\\src",
+        "practica10\\src",
+        "practica11\\src",
+        "practica12\\src"
     ]
 }

@@ -1,5 +1,3 @@
-package practica4.src;
-
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 

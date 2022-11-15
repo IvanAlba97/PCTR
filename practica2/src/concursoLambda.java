@@ -1,5 +1,3 @@
-package practica2.src;
-
 /**
  * Esta clase genera una condición de concurso sobre la variable n mediante expresiones lambda
  * @author Iván Alba Gómez

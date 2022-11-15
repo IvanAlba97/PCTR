@@ -1,5 +1,3 @@
-package practica3.src;
-
 import java.util.Scanner;
 import java.util.Random;
 

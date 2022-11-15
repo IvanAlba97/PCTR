@@ -1,5 +1,3 @@
-package practica2.src;
-
 /**
  * Esta clase contiene los atributos y metodos para manejar una cuenta corriente
  * @author Iván Alba Gómez

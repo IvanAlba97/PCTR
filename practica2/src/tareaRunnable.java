@@ -1,5 +1,3 @@
-package practica2.src;
-
 /**
  * Esta clase contiene todos los atributos y métodos para modificar una variable de manera concurrente
  * @author Iván Alba Gómez

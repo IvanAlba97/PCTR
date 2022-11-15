@@ -1,5 +1,3 @@
-package practica5.src;
-
 import java.util.Scanner;
 import java.util.Vector;
 import java.util.concurrent.Callable;

@@ -1,5 +1,3 @@
-package practica4.src;
-
 /**
  * Esta clase contiene los atributos y metodos para el cuarto intento del algoritmo de Dekker.
  * @author Iván Alba Gómez

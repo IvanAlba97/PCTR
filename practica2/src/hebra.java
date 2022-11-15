@@ -1,5 +1,3 @@
-package practica2.src;
-
 /**
  * Esta clase contiene los atributos y metodos de una hebra
  * @author Iván Alba Gómez

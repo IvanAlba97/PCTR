@@ -1,5 +1,3 @@
-package practica2.src;
-
 /**
  * Esta clase contiene los atributos y metodos manejar un cajero
  * @author Iván Alba Gómez

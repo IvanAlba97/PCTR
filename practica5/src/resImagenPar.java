@@ -1,5 +1,3 @@
-package practica5.src;
-
 import java.util.Scanner;
 import java.util.Random;
 import java.util.concurrent.*;
