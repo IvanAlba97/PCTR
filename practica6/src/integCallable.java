@@ -2,8 +2,6 @@ import java.util.Random;
 import java.util.Scanner;
 import java.util.Vector;
 import java.util.concurrent.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * Esta clase contiene los atributos y metodos para el cálculo de una integral usando la interfaz Future.
