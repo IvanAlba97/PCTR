@@ -1,24 +1,58 @@
+/**
+ * Esta clase contiene los atributos y metodos para el manejo de productores y consumidores.
+ * @author Iván Alba Gómez
+ * @version 3.0
+ * @see prodCon.java
+ */
 public class usaProdCon {
     
     static PCMonitor monitor = new PCMonitor();
     
+    /**
+     * Esta clase contiene los atributos y metodos para el manejo de productores.
+     * @author Iván Alba Gómez
+     * @version 3.0
+     * @see prodCon.java
+     */
     static class productor extends Thread {
+        
+        /**
+         * Constructor vacío.
+         */
         public productor() {}
+
+        /**
+         * Método que encapsula el código a ejecutar concurrentemente.
+         */
         @Override
         public void run() {
             while(true) {
                 try {
                     monitor.Take();
                     monitor.Append(1);
-                } catch(Exception E) {
-                    System.err.println(E.getMessage());
+                } catch(Exception e) {
+                    e.printStackTrace();
                 }
             }
         }
     }
 
+    /**
+     * Esta clase contiene los atributos y metodos para el manejo de consumidores.
+     * @author Iván Alba Gómez
+     * @version 3.0
+     * @see prodCon.java
+     */
     static class consumidor extends Thread {
+        
+        /**
+         * Constructor vacío.
+         */
         public consumidor() {}
+
+        /**
+         * Método que encapsula el código a ejecutar concurrentemente.
+         */
         @Override
         public void run() {
             while(true) {
@@ -26,12 +60,15 @@ public class usaProdCon {
                     monitor.Take();
                     monitor.Append(1);
                 } catch(Exception E) {
-                    System.err.println(E.getMessage());
+                    e.printStackTrace();
                 }
             }
         }
     }
 
+    /**
+     * Método principal.
+     */
     public static void main(String[] args) {
         int N = 5;
         productor[] productores = new productor[N];
