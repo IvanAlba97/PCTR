@@ -5,7 +5,7 @@
  * @author Ben-Ari
  * @see usaProdCon.java
  */
-public class PCMonitor {
+public class prodCon {
   public final int N = 100;
   public int Oldest = 0, Newest = 0;
   public volatile int Count = 0;
