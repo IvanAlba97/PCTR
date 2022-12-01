@@ -6,7 +6,7 @@
  */
 public class usaProdCon {
     
-    static PCMonitor monitor = new PCMonitor();
+    static prodCon monitor = new prodCon();
     
     /**
      * Esta clase contiene los atributos y metodos para el manejo de productores.
@@ -59,7 +59,7 @@ public class usaProdCon {
                 try {
                     monitor.Take();
                     monitor.Append(1);
-                } catch(Exception E) {
+                } catch(Exception e) {
                     e.printStackTrace();
                 }
             }
