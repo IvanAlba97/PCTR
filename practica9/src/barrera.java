@@ -63,7 +63,7 @@ public class barrera implements Runnable {
             }
         }
 
-        for(int i=0;i<tiempos.length;i++) tiempos[i] /= 1000000;
+        for(int i = 0; i < tiempos.length; i++) tiempos[i] /= 1000000;
         
         double t = 1000000;
         int aux = -1;
