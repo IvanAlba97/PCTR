@@ -1,6 +1,12 @@
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * Esta clase contiene los atributos y metodos para el control de los tenedores en el problema de los filósofos.
+ * @author Iván Alba Gómez
+ * @version 3.0
+ * @see usaFiloApiAn.java
+ */
 public class filoApiAN {
 
     private final int N = 5;
@@ -8,6 +14,9 @@ public class filoApiAN {
     private final ReentrantLock cerrojo;
     private Condition OKtoEat[];
 
+    /**
+     * Método constructor.
+     */
     public filoApiAN() {
         this.fork = new int[N];
         this.cerrojo = new ReentrantLock();
@@ -20,6 +29,10 @@ public class filoApiAN {
         }
     }
 
+    /**
+     * Este método se asigna los tenedores de sus lados cuando están disponibles.
+     * @param hilo Identificador del hilo
+     */
     public void takeForks(int hilo) {
         cerrojo.lock();
         try {
@@ -29,13 +42,17 @@ public class filoApiAN {
             this.fork[(hilo + 1) % N] = fork[(hilo + 1) % N] - 1;
             this.fork[(hilo - 1) % N] = fork[(hilo - 1) % N] - 1;
             System.out.println("El filosofo " + hilo + " ha cogido un tenedor.");
-        } catch (InterruptedException E) {
-            System.err.println(E.getMessage());
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         } finally {
             cerrojo.unlock();
         }
     }
 
+    /**
+     * Este método libera los tenedores de sus lados.
+     * @param hilo Identificador del hilo
+     */
     public void releaseForks(int hilo) {
         cerrojo.lock();
         try {

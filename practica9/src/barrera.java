@@ -2,6 +2,11 @@ import java.util.concurrent.CyclicBarrier;
 import java.util.Random;
 import java.util.concurrent.BrokenBarrierException;
 
+/**
+ * Esta clase contiene los atributos y metodos para la creación de hebras y el uso de barreras.
+ * @author Iván Alba Gómez
+ * @version 3.0
+ */
 public class barrera implements Runnable {
 
     CyclicBarrier natacion = null;
@@ -10,6 +15,13 @@ public class barrera implements Runnable {
     private static double[] tiempos = new double[100];
     private int id;
 
+    /**
+     * Método constructor.
+     * @param natacion Barrera nº1
+     * @param ciclismo Barrera nº2
+     * @param correr Barrera nº3
+     * @param i Identificador de la hebra.
+     */
     public barrera(CyclicBarrier natacion, CyclicBarrier ciclismo, CyclicBarrier correr, int i) {
         this.natacion = natacion;
         this.ciclismo = ciclismo;
@@ -17,6 +29,9 @@ public class barrera implements Runnable {
         this.id = i;
     }
 
+    /**
+     * Método que encapsula el código a ejecutar concurrentemente.
+     */
     @Override
     public void run() {
         Random rand = new Random(System.nanoTime());
@@ -40,26 +55,32 @@ public class barrera implements Runnable {
             System.out.println(Thread.currentThread().getName() + " esperando en la barrera de correr.");
             correr.await();
             System.out.println(Thread.currentThread().getName() + " ha terminado.");
-        } catch (InterruptedException | BrokenBarrierException E) {
-            System.err.println(E.getMessage());
+        } catch (InterruptedException | BrokenBarrierException e) {
+            e.printStackTrace();
         }
 
     }
 
+    /**
+     * Método principal.
+     */
     public static void main(String[] args) {
 
         CyclicBarrier natacion = new CyclicBarrier(100);
         CyclicBarrier ciclismo = new CyclicBarrier(100);
         CyclicBarrier correr = new CyclicBarrier(100);
         Thread[] hilos = new Thread[100];
+
         for (int i = 0; i < 100; i++) {
             hilos[i] = new Thread(new barrera(natacion, ciclismo, correr, i));
             hilos[i].start();
         }
+
         for (int i = 0; i < 100; i++) {
             try {
                 hilos[i].join();
             } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         }
 

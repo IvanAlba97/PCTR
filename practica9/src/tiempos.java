@@ -2,10 +2,21 @@ import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * Esta clase contiene los atributos y metodos para la comparación de tiempos de las distintas formas de proveer exclusión mútua.
+ * @author Iván Alba Gómez
+ * @version 3.0
+ */
 public class tiempos  {
 
+	/**
+	 * Método constructor.
+	 */
 	public tiempos() {}
 	
+	/**
+	 * Método principal.
+	 */
 	public static void main(String[] args) {
 
 		long iteraciones = 100000000;
@@ -18,7 +29,7 @@ public class tiempos  {
 		double tiempoFin = System.nanoTime() - tiempoInicio;
 		System.out.println("SYNCHRONIZED: " + tiempoFin / 1000000 + " milisegundos");
 		
-		//SEMAPHORE
+		// SEMAPHORE
 		long n2 = 0;
 		Semaphore sem = new Semaphore(1);
 		tiempoInicio = System.nanoTime();

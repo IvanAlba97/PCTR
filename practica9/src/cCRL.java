@@ -1,14 +1,31 @@
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * Esta clase utiliza objetos de la clase ReentrantLock para proveer de exclusión mútua a una variable compartida.
+ * @author Iván Alba Gómez
+ * @version 3.0
+ * @see ccSem.java
+ */
 public class cCRL {
 
     private ReentrantLock cerrojo = new ReentrantLock();
     private double saldo;
 
+    /**
+     * Método constructor.
+     */
     public cCRL() { this.saldo = 0.0; }
 
+    /**
+     * Método observador.
+     * @return saldo Devuelve el saldo actual 
+     */
     public double getSaldo() { return saldo; }
 
+    /**
+     * Método modificador.
+     * @param cantidad Cantidad a aumentar en la variable saldo.
+     */
     public void aumentar(double cantidad) {
         cerrojo.lock();
         try{
@@ -20,6 +37,10 @@ public class cCRL {
         }
     }
 
+    /**
+     * Método modificador.
+     * @param cantidad Cantidad a decrementar en la variable saldo.
+     */
     public void decrementar(double cantidad) {
         cerrojo.lock();
         try {

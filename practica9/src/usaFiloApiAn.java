@@ -1,15 +1,28 @@
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+/**
+ * Esta clase contiene los atributos y metodos para la creación de hebras que hagan uso del monitor filoApiAn
+ * @author Iván Alba Gómez
+ * @version 3.0
+ * @see filoApiAN.java
+ */
 public class usaFiloApiAn implements Runnable {
 
     static filoApiAN monitor = new filoApiAN();
     private int hilo;
 
+    /**
+     * Método constructor.
+     * @param hilo Identificador del hilo.
+     */
     public usaFiloApiAn(int hilo) {
         this.hilo = hilo;
     }
 
+    /**
+     * Método que encapsula el código a ejecutar concurrentemente.
+     */
     @Override
     public void run() {
         while (true) {
@@ -24,6 +37,9 @@ public class usaFiloApiAn implements Runnable {
         }
     }
 
+    /**
+     * Método principal.
+     */
     public static void main(String[] args) {
         usaFiloApiAn hilos[] = new usaFiloApiAn[5];
         ExecutorService pool = Executors.newCachedThreadPool();
