@@ -8,7 +8,6 @@
  * aproxActual: para preguntar al servidor el valor de la aproximacion a PI;
  */
 
-
 import java.rmi.*;
 public interface iPiMonteCarlo
   extends Remote{

@@ -1,8 +1,18 @@
 import java.rmi.Naming;
 import java.util.Scanner;
 
+/**
+ * Esta clase interpreta el cliente para el problema del cálculo de PI mediante el método de Monte Carlo.
+ * @author Iván Alba Gómez
+ * @version 3.0
+ * @see iPiMonteCarlo.java
+ * @see sPiMonteCarlo.java
+ */
 public class cPiMonteCarlo {
 
+    /**
+     * Método principal.
+     */
     public static void main(String[] args) throws Exception {
 
         Scanner S = new Scanner(System.in);
