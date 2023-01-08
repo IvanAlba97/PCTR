@@ -2,7 +2,17 @@
 //EJECUCION: mpjrun.bat -np 5 escalMultiple
 
 import mpi .*;
+
+/**
+ * Esta clase contiene los atributos y metodos para el producto escalar múltiple utilizando MPJ-Express.
+ * @author Iván Alba Gómez
+ * @version 3.0
+ */
 public class escalMultiple {
+
+    /**
+     * Método principal.
+     */
     public static void main (String[] args) throws Exception {
         MPI.Init (args);
         int rank = MPI.COMM_WORLD.Rank ();

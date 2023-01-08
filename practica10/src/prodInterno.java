@@ -4,7 +4,16 @@
 import mpi.*;
 import java.util.Arrays;
 
+/**
+ * Esta clase contiene los atributos y metodos para la creación de hebras y el uso de barreras.
+ * @author Iván Alba Gómez
+ * @version 3.0
+ */
 public class prodInterno {
+
+    /**
+     * Método principal.
+     */
     public static void main(String[] args) {
         
         MPI.Init(args);
@@ -36,6 +45,12 @@ public class prodInterno {
         MPI.Finalize();
     }
 
+    /**
+     * Este método realiza el producto de dos buffers, en este caso interpretados por vectores.
+     * @param revBuffer1 Buffer 1
+     * @param revBuffer2 Buffer 2
+     * @return res
+     */
     int producto(int[] revBuffer1, int[] revBuffer2) {
         int res = 0;
         for(int i = 0; i < revBuffer1.length; i++) {
